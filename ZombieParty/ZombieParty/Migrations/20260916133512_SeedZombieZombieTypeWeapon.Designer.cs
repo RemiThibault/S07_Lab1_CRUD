@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZombieParty.Models.Data;
 
@@ -11,9 +12,11 @@ using ZombieParty.Models.Data;
 namespace ZombieParty.Migrations
 {
     [DbContext(typeof(ZombiePartyDbContext))]
-    partial class ZombiePartyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260916133512_SeedZombieZombieTypeWeapon")]
+    partial class SeedZombieZombieTypeWeapon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,18 +126,6 @@ namespace ZombieParty.Migrations
                             Price = 500m,
                             Qty = 30,
                             QtyBought = 1
-                        },
-                        new
-                        {
-                            WeaponId = 3,
-                            CreatedDate = new DateTime(2026, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "An awesome identical Stainless Steel Shield",
-                            Force = 11m,
-                            Image = "https://publicdomainvectors.org/photos/Shield-ClassicMedieval1.png",
-                            Name = "Identical Master Shield",
-                            Price = 501m,
-                            Qty = 60,
-                            QtyBought = 2
                         });
                 });
 
